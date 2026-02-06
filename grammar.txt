@@ -1,0 +1,44 @@
+// variable
+let age = 1;
+let name = "Monkey";
+let result = 10 * (20 / 2);
+
+// array
+let my_arr = [1, 2, 3, 4, 5];
+
+// hashmap
+let priyanshu = {"name": "Priyanshu", "age": 22};
+
+// accessing the elements in arrays and hashes 
+my_arr[0] // => 1
+priyanshu["name"] // => "Priyanshu"
+
+// let statement can also be used to bind functions to names
+let add = fn(a, b) { return a + b; };
+
+// calling functions
+add(1, 2) // => 3
+
+// more complex function 
+let fibonacci = fn(x) {
+    if (x == 0) {
+        0
+    } else {
+        if (x == 1) {
+            1
+        } else {
+            fibonacci(x - 1) + fibonacci(x - 2);
+        }
+    }
+};
+
+// this also support higher order function (functions that can take another function as an arguments)
+let twice = fn(f, x) {
+    return f(f(x));
+};
+
+let addTwo = fn(x) {
+    return x + 2;
+};
+
+twice(addTwo, 2); // => 6
