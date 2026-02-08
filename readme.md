@@ -5,6 +5,11 @@ ast and all that shit.
 
 todo:
 - [X] tokens
+    - [ ] minus
+    - [ ] multiple
+    - [ ] division
+    - [ ] classes
+    - [ ] if/else
 - [ ] lexer
 - [ ] parser
 - [ ] abstract syntax tree
