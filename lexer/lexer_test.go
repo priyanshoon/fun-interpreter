@@ -107,11 +107,6 @@ func TestNextToken(t *testing.T) {
 		{token.EOF, ""},
 	}
 
-	/*
-		10 == 10;
-		10 != 9;
-	*/
-
 	l := New(input)
 
 	for i, tt := range tests {
