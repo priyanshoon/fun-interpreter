@@ -1,0 +1,55 @@
+# this is psuedocode for recursive descent parser for self explanation
+
+function parseProgram() {
+    program = newProgramASTNode()
+
+    advanceTokens()
+    
+    for (currentToken() != EOF_TOKEN) {
+        statement = null
+
+        if (currentToken() == LET_TOKEN) {
+            statement = parseLetStatement()
+        } else if (currentToken() == RETURN_TOKEN) {
+            statement = parseReturnStatement()
+        } else if (currentToken() == IF_TOKEN) {
+            statement = parseIfStatement()
+        } 
+        
+        if (statment != null) {
+            program.Statements.push(statement)
+        }
+
+        advanceTokens()
+    }
+
+    retrun program
+}
+
+function parseLetStatement() {
+    advanceTokens()
+
+    identifier = paresIdentifier()
+
+    advanceTokens()
+
+    if currentToken() != EQUAL_TOKEN {
+        parseError("no equal sign!")
+        return null
+    }
+
+    advanceTokens()
+
+    value = parseExpression()
+
+    variableStatment = newVariableStatementASTNode()
+    variableStatment.identifier = identifier
+    variableStatment.value = value
+    return variableStatment
+}
+
+function parseIdentifier() {
+    identifier = newIdentifireASTNode()
+    identifier.token = currentToken()
+    return identifier
+}
