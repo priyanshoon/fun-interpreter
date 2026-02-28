@@ -1,5 +1,7 @@
 # toy interpreter using go
 
+![something](https://media1.tenor.com/m/kWP0EMiE41gAAAAC/gintama-gintoki.gif) 
+
 this is a simple toy interpreter made by go programming language to understand lexer, parser
 ast and all that shit.
 
